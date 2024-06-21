@@ -58,15 +58,6 @@ class ExtraInfo(TimeStampModel):
     def __str__(self):
         return self.name
 
-class About(TimeStampModel):
-    title = models.CharField(max_length=100)
-    body = models.TextField()
-    image = models.ImageField(upload_to='images/')
-    video = models.URLField()
-    extra_info = models.ManyToManyField(ExtraInfo)
-
-    def __str__(self):
-        return self.title
 
 class HappyClients(TimeStampModel):
     name = models.CharField(max_length=100)
@@ -76,5 +67,19 @@ class HappyClients(TimeStampModel):
 
     def __str__(self):
         return self.name
+
+
+class About(TimeStampModel):
+    title = models.CharField(max_length=100)
+    body = models.TextField()
+    image = models.ImageField(upload_to='images/')
+    video = models.URLField()
+    extra_info = models.ManyToManyField(ExtraInfo)
+    happy_clients = models.ManyToManyField(HappyClients)
+
+    def __str__(self):
+        return self.title
+
+
 
 
