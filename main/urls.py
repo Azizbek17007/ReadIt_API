@@ -8,5 +8,10 @@ urlpatterns = [
     path('tags/', TagView.as_view(), name='tags'),
     path('authors/', AuthorView.as_view(), name='authors'),
     path('blog/', PostView.as_view(), name='blog'),
-    path('comments/', Commentview.as_view(), name='comments')
+    path('comments/', Commentview.as_view(), name='comments'),
+    path('about/', AboutView.as_view(), name='about'),
+    path('extra-info/', Extra_infoView.as_view(), name='extra_info'),
+    path('happy-clients/', HappyClientsView.as_view(), name='happy_clients'),
+
+
 ]

@@ -52,3 +52,18 @@ class PostView(ListAPIView):
             return Post.objects.filter(category__name=category)
         if q:
             return Post.objects.filter(title__icontains=q)
+
+
+class AboutView(ListAPIView):
+    queryset = About.objects.all().order_by('-id')
+    serializer_class = AboutSerializer
+
+
+class Extra_infoView(ListAPIView):
+    queryset = Extra_info.objects.all()
+    serializer_class = Extra_infoSerializer
+
+
+class HappyClientsView(ListAPIView):
+    queryset = HappyClients.objects.all()
+    serializer_class = HappyClientsSerializer

@@ -35,6 +35,27 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ['id', 'title', 'image', 'tags', 'author', 'category', 'body', 'comment_set', 'created_at', 'updated_at']
+        fields = ['id', 'title', 'image', 'tags', 'author', 'category', 'body', 'comment_set', 'created_at',
+                  'updated_at']
         read_only_fields = ['created_at', 'updated_at']
 
+
+class AboutSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = About
+        fields = '__all__'
+        read_only_fields = ['created_at', 'updated_at']
+
+
+class Extra_infoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Extra_info
+        fields = '__all__'
+        read_only_fields = ['created_at', 'updated_at']
+
+
+class HappyClientsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HappyClients
+        fields = '__all__'
+        read_only_fields = ['created_at', 'updated_at']
